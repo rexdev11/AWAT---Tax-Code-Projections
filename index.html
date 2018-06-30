@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WebDriver</title>
+    </head>
+    <body>
+        <h1>Welcome To The Show...</h1>
+        <noscript>Please allow JavaScript!</noscript>
+        <script src="index.js" type="application/ecmascript">
+        </script>
+
+        <div id="GoogleSheetsID" class="form-group">
+            <input type="text" placeholder="GoogleSheetsID">
+            <button class="submit-btn">Submit</button>
+        </div>
+        <script src="i"></script>
+        <script type="text/javascript">
+            (function () {
+                var socket = new Ws("ws://localhost:8080/websocket");
+
+                socket.OnConnect(function(){
+                    // update the rest of connected clients, including "myself" when "my" connection is 100% ready.
+                    socket.Emit("visit");
+                });
+
+
+                socket.On("visit", function (newCount) {
+                    console.log("visit websocket event with newCount of: ", newCount);
+                    var text = "1 online visitor";
+                    if (newCount > 1) {
+                        text = newCount + " online visitors";
+                    }
+                    document.getElementById("online_visitors").innerHTML = text;
+                });
+
+                socket.OnDisconnect(function () {
+                    document.getElementById("online_visitors").innerHTML = "you've been disconnected";
+                });
+
+            })();
+        </script>
+    </body>
+</html>
