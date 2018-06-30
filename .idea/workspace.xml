@@ -28,20 +28,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="315">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".local.env.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.local.env.ts">
+      <file leaf-file-name="yarn.lock" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/yarn.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="105">
+              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -68,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -77,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/webpack-config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -128,6 +128,7 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/.local.env.ts" />
         <option value="$PROJECT_DIR$/src/main.ts" />
+        <option value="$PROJECT_DIR$/yarn.lock" />
       </list>
     </option>
   </component>
@@ -152,13 +153,11 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="461" />
-    <option name="y" value="43" />
-    <option name="width" value="952" />
-    <option name="height" value="765" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -193,11 +192,6 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="fbs" type="cbb8eebc:String" user="fbs" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="fbs" type="cbb8eebc:String" user="fbs" />
-              <item name=".idea" type="cbb8eebc:String" user=".idea" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -239,7 +233,7 @@
   </component>
   <component name="RunManager" selected="npm.start">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="fbs" />
+      <module name="_fbs" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
@@ -248,7 +242,7 @@
       <directory value="$PROJECT_DIR$/" />
     </configuration>
     <configuration name="gobench fbs" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="fbs" />
+      <module name="_fbs" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gobench" />
       <kind value="DIRECTORY" />
@@ -272,7 +266,7 @@
       <node-interpreter value="/usr/local/bin/node" />
       <envs />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" factoryName="npm" editBeforeRun="true">
+    <configuration name="start" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
       <arguments value="$GOPATH=$GOROOTPATH; --scripts-prepend-node-path" />
@@ -311,15 +305,15 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" sideWeight="0.49928468" weight="0.32969698" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8535714" visible="true" weight="0.16809729" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8541667" visible="true" weight="0.16809729" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.4248927" side_tool="true" visible="true" weight="0.3212121" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.1595136" side_tool="true" visible="true" weight="0.18545455" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.87267524" weight="0.34787878" />
-      <window_info id="Structure" order="1" sideWeight="0.14642857" side_tool="true" visible="true" weight="0.16809729" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.5751073" visible="true" weight="0.3212121" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8404864" visible="true" weight="0.18545455" />
+      <window_info id="Structure" order="1" sideWeight="0.14583333" side_tool="true" visible="true" weight="0.16809729" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.5751073" weight="0.3212121" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="8" sideWeight="0.49928468" weight="0.32969698" />
@@ -340,20 +334,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webpack-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -532,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yarn.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50640">
-          <caret line="3376" selection-start-line="3376" selection-end-line="3376" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/webpack/schemas/WebpackOptions.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -608,14 +581,14 @@
     <entry file="file://$PROJECT_DIR$/webpack-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -629,7 +602,7 @@
     <entry file="file://$PROJECT_DIR$/.local.env.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -650,10 +623,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/_fbs.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="315">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
         </state>
       </provider>
     </entry>
