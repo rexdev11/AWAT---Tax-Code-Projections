@@ -48,7 +48,11 @@ export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
         waitUntil: "networkidle0"
     });
 
-    const taggedElements: string = await Page.evaluate(() => {
+    interface Tagged {
+        tags: string[],
+        count: number
+    }
+    const taggedElements: Tagged = await Page.evaluate(() => {
        const anchors: NodeListOf<HTMLAnchorElement> =  document.getElementsByTagName('a');
        const ID_TAG = 'AnchorTagged:';
        const RESULT: {
@@ -56,19 +60,22 @@ export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
            count: number
        } = {
            tags: [],
-           count: anchors.length
+           count: 0
        };
 
        for (let i = 0; i < anchors.length; i++) {
+           if (anchors.item(i).className.match('_235y')) {
             anchors.item(i).id = ID_TAG + i;
             RESULT.tags = RESULT.tags.concat(ID_TAG + i)
+           }
        }
-
+       RESULT.count = RESULT.tags.length;
        return RESULT;
     });
 
     for (let tag of taggedElements.tags) {
-        await Page.click('tag');
+        await Page.click('#' + tag);
+        console.log(tag);
     }
 
     await sleep(5000);
