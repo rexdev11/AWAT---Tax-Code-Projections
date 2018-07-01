@@ -1,30 +1,79 @@
 import puppeteer = require("puppeteer");
-import {TEMP_CREDS} from "../.local.env";
-import * as fs from "fs";
+import { TEMP_CREDS } from "../.local.env";
+import { Page } from "puppeteer";
+
+async function getDocHTML(page: Page): Promise<string> {
+    const result = await page
+        .evaluate(
+            'new XMLSerializer().serializeToString(document.doctype) + document.documentElement.outerHTML;'
+        );
+    if (
+        result
+        && typeof result
+        === typeof 'string'
+    ) {
+        return result;
+    }
+    return await Promise.reject('No Document');
+}
 
 export async function sleep(time: number) {
     return await setTimeout(() => {}, time);
 }
 
-export async function runPup(searchTerm: string): Promise<void> {
+export async function generalCrawler(options: {
+    url: string,
+    params: string,
+    regEx: RegExp[],
+    patterns: string[],
+    cb: (err, data) => void
+}) {
+
+}
+
+export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
     const politicalAdURL: string = `https://www.facebook.com/politicalcontentads/?active_status=all&ad_type=ads-with-political-content&q=${searchTerm}`;
+
     const Browser = await puppeteer.launch({
         headless: false,
         devtools: true
     });
+
     const Page = await Browser.newPage();
     await Page.goto(politicalAdURL);
     await Page.type('#' + Object.keys(TEMP_CREDS)[0], TEMP_CREDS.email);
     await Page.type('#' + Object.keys(TEMP_CREDS)[1], TEMP_CREDS.pass);
-    const result = await Page.evaluate('new XMLSerializer().serializeToString(document.doctype) + document.documentElement.outerHTML;');
-    if (result) {
-        console.log('here!');
-        fs.writeFileSync('./newdoc.html', result);
-    }
     await Page.click('#loginbutton');
+    await Page.waitForNavigation({
+        waitUntil: "networkidle0"
+    });
+
+    const taggedElements: string = await Page.evaluate(() => {
+       const anchors: NodeListOf<HTMLAnchorElement> =  document.getElementsByTagName('a');
+       const ID_TAG = 'AnchorTagged:';
+       const RESULT: {
+           tags: string[],
+           count: number
+       } = {
+           tags: [],
+           count: anchors.length
+       };
+
+       for (let i = 0; i < anchors.length; i++) {
+            anchors.item(i).id = ID_TAG + i;
+            RESULT.tags = RESULT.tags.concat(ID_TAG + i)
+       }
+
+       return RESULT;
+    });
+
+    for (let tag of taggedElements.tags) {
+        await Page.click('tag');
+    }
+
     await sleep(5000);
-    console.log('after', result);
+    console.log('after', await getDocHTML(Page));
     return await Promise.resolve();
 }
 
-runPup('Jack');
+runPoliticalAdCrawler('Jack');

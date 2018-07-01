@@ -13,7 +13,6 @@ import (
 func FBS() {
 	fmt.Println("yea!")
 	app := iris.New()
-
 	app.Get("/", func(ctx iris.Context) {
 		ctx.ServeFile("facebookScraper", false)
 	})
@@ -64,19 +63,21 @@ func setupWebsocket(app *iris.Application) {
 	app.Any("/iris-ws.js", func(ctx iris.Context) {
 		ctx.Write(websocket.ClientSource)
 	})
+
 	target, err := url.Parse("http://localhost:22")
+
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("Starting Server")
-	go host.NewProxy("something.local:2733", target).ListenAndServe()
-	wd, err := os.Getwd();
+
+	go host.NewProxy("localhost:2733", target).ListenAndServe()
+	wd, err := os.Getwd()
 
 	if err != nil {
 		panic(err)
 	}
-	app.Run(iris.TLS("something.local:2733", string(wd + `/../fbs/pems/domain.crt`), string(wd + "/../fbs/pems/domain.key")))
-
+	app.Run(iris.TLS("localhost:2733", string(wd + `/../fbs/pems/domain.crt`), string(wd + "/../fbs/pems/domain.key")))
 }
 
 func handleConnection(c websocket.Connection) {
