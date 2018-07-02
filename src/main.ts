@@ -1,6 +1,6 @@
 import puppeteer = require("puppeteer");
 import { TEMP_CREDS } from "../.local.env";
-import { Page } from "puppeteer";
+import {LaunchOptions, Page} from "puppeteer";
 
 async function getDocHTML(page: Page): Promise<string> {
     const result = await page
@@ -34,7 +34,7 @@ export async function generalCrawler(options: {
 export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
     const politicalAdURL: string = `https://www.facebook.com/politicalcontentads/?active_status=all&ad_type=ads-with-political-content&q=${searchTerm}`;
 
-    const Browser = await puppeteer.launch({
+    const Browser = await puppeteer.launch( <LaunchOptions> {
         headless: false,
         devtools: true
     });
