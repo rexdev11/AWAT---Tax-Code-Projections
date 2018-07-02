@@ -14,7 +14,7 @@ func FBS() {
 	fmt.Println("yea!")
 	app := iris.New()
 	app.Get("/", func(ctx iris.Context) {
-		ctx.ServeFile("facebookScraper", false)
+		ctx.ServeFile("dist/main.js", false)
 	})
 	setupWebsocket(app)
 }

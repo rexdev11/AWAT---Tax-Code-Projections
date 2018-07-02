@@ -52,6 +52,7 @@ export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
         tags: string[],
         count: number
     }
+
     const taggedElements: Tagged = await Page.evaluate(() => {
        const anchors: NodeListOf<HTMLAnchorElement> =  document.getElementsByTagName('a');
        const ID_TAG = 'AnchorTagged:';

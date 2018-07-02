@@ -1,13 +1,12 @@
 package main
 
 import (
-	"fbs"
 	"fmt"
 	"github.com/kataras/iris"
+	"github.com/kataras/iris/websocket"
 )
 
 func main() {
-	fbs.FBS()
 	fmt.Println("10")
 }
 
@@ -51,7 +50,18 @@ func StoresFactory(configs TaxCodeConfigs) {
 // TODO: Main UX Flow ( Init UI -> Consumes Profile Data -> Sets Session State -> Retrieves Process Library -> Assembles Processes -> Project )
 
 func initiallizeUI() {
-	const app = iris.Default()
+
+}
+
+func initializeCrawler(app iris.Application) {
+	app.Any("/dist/crawler.js", websocket.ClientHandler())
+}
+
+func crawlerHandler(ctx iris.Context)("/router") {
+
+	var routes [2]string
+	routes[0] = "/crawler"
+
 }
 
 // TODO: Homeostasis do while ( Resilience is > critical , no Sig Term)
