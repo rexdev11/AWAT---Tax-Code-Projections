@@ -35,7 +35,6 @@ type TaxCodeConfigs struct {
 	specs TaxCodeConfigSpec
 }
 
-
 type Store struct {
 	value func(key string)
 	next func()
@@ -53,14 +52,15 @@ func initiallizeUI() {
 
 }
 
-func initializeCrawler(app iris.Application) {
+type CrawlerOptions struct {
+	urls [0:]string
+}
+
+func (options )initializeCrawler(app iris.Application) {
 	app.Any("/dist/crawler.js", websocket.ClientHandler())
 }
 
-func crawlerHandler(ctx iris.Context)("/router") {
-
-	var routes [2]string
-	routes[0] = "/crawler"
+func crawlerHandler(ctx iris.Context)(routes *Routes[]) {
 
 }
 

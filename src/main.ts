@@ -28,7 +28,7 @@ export async function generalCrawler(options: {
     patterns: string[],
     cb: (err, data) => void
 }) {
-
+    // Todo: ...
 }
 
 export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
@@ -63,7 +63,6 @@ export async function runPoliticalAdCrawler(searchTerm: string): Promise<void> {
            tags: [],
            count: 0
        };
-
        for (let i = 0; i < anchors.length; i++) {
            if (anchors.item(i).className.match('_235y')) {
             anchors.item(i).id = ID_TAG + i;

@@ -3,7 +3,6 @@ package fbs
 import (
 	"fmt"
 	"github.com/kataras/iris"
-
 	"github.com/kataras/iris/websocket"
 	"net/url"
 	"github.com/kataras/iris/core/host"
@@ -18,24 +17,6 @@ func FBS() {
 	})
 	setupWebsocket(app)
 }
-
-//func webSocket(app *iris.Application) {
-//
-//	ws := webSocket.New(webSocket.Config{
-//		ReadBufferSize:  1024,
-//		WriteBufferSize: 1024,
-//	})
-//
-//	ws.OnConnection(handleConnection)
-//
-//	// dont stop or fake a grin
-//
-//	app.Get("/echo", ws.Handler())
-//
-//	app.Any("/iris-ws.js", func (ctx iris.Context) {
-//		ctx.Write("")
-//	})
-//}
 
 func indexHandler(ctx iris.Context) {
 	ctx.ServeFile("index.html", true)
@@ -90,4 +71,8 @@ func handleConnection(c websocket.Connection) {
 		// Write message to all except this client with:
 		c.To(websocket.Broadcast).Emit("chat", msg)
 	})
+}
+
+func FBScrapperHandler() {
+
 }
